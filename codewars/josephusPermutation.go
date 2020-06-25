@@ -1,39 +1,28 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
 func josephusPermutation(alive []interface{}, k int, dead []interface{}, begKill int) []interface{} {
-	fmt.Println("before:alive", alive)
-	fmt.Println("before:dead", dead)
 	if len(alive) == 0 {
 		return alive
 	}
 	indices := []int{}
 	peopleBeforeRitual := len(alive)
-	for i := (begKill % (len(alive))); i < peopleBeforeRitual; i = i + k {
+
+	for i := (begKill % peopleBeforeRitual); i < peopleBeforeRitual; i = i + k {
 		indices = append(indices, i)
 	}
-	fmt.Println("indices", indices)
+
 	alive, justKilled := removeIndices(alive, indices)
 	dead = append(dead, justKilled...)
-	fmt.Println("after:dead", dead)
-	fmt.Println("after:alive", alive)
+
 	if len(alive) <= 1 {
 		return append(dead, alive...)
 	}
-	// if len(alive) <= k {
-	// 	nextKill := (k - ((peopleBeforeRitual - 1) - indices[0]) - 1) % (len(alive))
-	// 	return josephusPermutation(alive, k, dead, nextKill)
-	// }
-	// nextBegKill := (indices[len(indices)-1] - (len(indices) - 1)) % (len(alive) - 1)
-	fmt.Println("k", k, "(peopleBeforeRitual - 1)", (peopleBeforeRitual - 1), "indices[0]", indices[0])
-	nextBegKill := k - ((peopleBeforeRitual - 1) - indices[0]) - 1
 
-	fmt.Println("peopleBeforeRitual", peopleBeforeRitual)
-	fmt.Println("nextBegKill", nextBegKill)
+	nextBegKill := k - ((peopleBeforeRitual - 1) - indices[0]) - 1
 	return josephusPermutation(alive, k, dead, nextBegKill)
 }
 

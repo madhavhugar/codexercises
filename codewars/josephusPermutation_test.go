@@ -30,10 +30,10 @@ func TestJosephusPermutation(t *testing.T) {
 	k = 3
 	dotest(t, items, k, result)
 
-	// items = []interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
-	// result = []interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
-	// k = 40
-	// dotest(t, items, k, result)
+	items = []interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+	result = []interface{}{10, 7, 8, 13, 5, 4, 12, 11, 3, 15, 14, 9, 1, 6, 2}
+	k = 40
+	dotest(t, items, k, result)
 }
 
 func TestRemoveByIndex(t *testing.T) {
