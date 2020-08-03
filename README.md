@@ -2,7 +2,7 @@
 
 Codewars:
 
-- [josephusPermutation](codewars/josephusPermutation.go) => [tests](codewars/josephusPermutation_test.go)
+- [josephusPermutation](codewars/josephusPermutation.go) => [Problem statement](https://www.codewars.com/kata/5550d638a99ddb113e0000a2) => [tests](codewars/josephusPermutation_test.go)
 
 Hackerearth:
 
