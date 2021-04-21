@@ -4,7 +4,7 @@ import "sort"
 
 var count int
 
-func combinationSum(nums []int, target int) int {
+func combinationSumIV(nums []int, target int) int {
 	count = 0
 	sort.Ints(nums)
 	helper(nums, target)

@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestCombinationSum(t *testing.T) {
+func TestCombinationSumIV(t *testing.T) {
 	tests := []struct {
 		name string
 		nums []int
@@ -31,7 +31,7 @@ func TestCombinationSum(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func (t *testing.T) {
-			got := combinationSum(test.nums, test.target)
+			got := combinationSumIV(test.nums, test.target)
 
 			if got != test.count {
 				t.Errorf("got != want; %d != %d", got, test.count)
