@@ -1,0 +1,2 @@
+a small text file to test out reader in golang
+a small text file to test out reader in golang
